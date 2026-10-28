@@ -1,6 +1,6 @@
 """Ports implemented by infrastructure."""
 
 from app.domain.ports.clock import Clock
-from app.domain.ports.item_repository import ItemRepository
+from app.domain.ports.order_repository import OrderRepository
 
-__all__ = ["Clock", "ItemRepository"]
+__all__ = ["Clock", "OrderRepository"]

@@ -1,5 +1,5 @@
 """Domain entities."""
 
-from app.domain.entities.item import Item
+from app.domain.entities.order import Order
 
-__all__ = ["Item"]
+__all__ = ["Order"]

@@ -1,5 +1,5 @@
 """Persistence adapters."""
 
-from app.infrastructure.persistence.memory_item_repository import MemoryItemRepository
+from app.infrastructure.persistence.mysql_order_repository import MysqlOrderRepository
 
-__all__ = ["MemoryItemRepository"]
+__all__ = ["MysqlOrderRepository"]

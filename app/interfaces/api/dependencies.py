@@ -4,7 +4,10 @@ from typing import Annotated
 
 from fastapi import Depends, Request
 
-from app.application.use_cases.items import CreateItem, GetItem, ListItems
+from app.application.use_cases.cancel_order import CancelOrder
+from app.application.use_cases.create_order import CreateOrder
+from app.application.use_cases.submit_bulk_orders import SubmitBulkOrders
+from app.application.use_cases.track_order import TrackOrder
 from app.interfaces.api.container import Container
 
 
@@ -12,19 +15,25 @@ def get_container(request: Request) -> Container:
     return request.app.state.container
 
 
-def get_create_item(
+def get_create_order(
     container: Annotated[Container, Depends(get_container)],
-) -> CreateItem:
-    return container.create_item
+) -> CreateOrder:
+    return container.create_order
 
 
-def get_get_item(
+def get_track_order(
     container: Annotated[Container, Depends(get_container)],
-) -> GetItem:
-    return container.get_item
+) -> TrackOrder:
+    return container.track_order
 
 
-def get_list_items(
+def get_cancel_order(
     container: Annotated[Container, Depends(get_container)],
-) -> ListItems:
-    return container.list_items
+) -> CancelOrder:
+    return container.cancel_order
+
+
+def get_submit_bulk(
+    container: Annotated[Container, Depends(get_container)],
+) -> SubmitBulkOrders:
+    return container.submit_bulk
