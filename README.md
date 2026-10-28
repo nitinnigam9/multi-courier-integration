@@ -243,6 +243,25 @@ CREATE TABLE bulk_batches (
 | `APP_RATE_LIMIT_ENABLED` | Turn the middleware off | `true` |
 | `APP_TRUST_PROXY` | Honor `X-Forwarded-For` for the client address | `false` |
 
+
+Sample .env file in which need to change DB credentials only as per the local mysql credentials.
+
+courier_partner=urbanebolt
+courier_partner_url=https://uat.urbanebolt.in
+courier_username=info@urbanebolt.com
+courier_password=EKIcygsLVV5RCtPZ
+
+api_endpoint=http://localhost:8000/api/v1
+
+DATABASE_URL=mysql+pymysql://root:12345678@localhost:3306/multi_courier_system
+courier_customer_code=UEBCUS0008
+courier_service_type=SDD
+courier_login_path=api/v1/auth/getToken/
+courier_manifest_path=api/v1/services/manifest/
+courier_tracking_path=api/v1/services/tracking-pub/
+courier_cancel_path=api/v1/services/cancel/
+courier_csrf_token=SuZfjeJQJQNlDaNxRJgaMqylRWlqogsL
+
 Rate limits follow the IETF rate-limit header fields. Both `burst` and `sustained` must have quota. A rejected request is not counted and returns `429` with `Retry-After` and `application/problem+json`.
 
 ## Layout
